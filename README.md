@@ -14,23 +14,46 @@ They are not prompts you paste. They are installed once and then available as `/
 
 ## How to install
 
-1. Find your Claude skills folder. If it doesn't exist, create it:
-   ```
-   mkdir -p ~/.claude/skills
-   ```
+**First time setup — takes about 5 minutes.**
 
-2. Copy the skill folder you want into `~/.claude/skills/`. For example, to install the YouTube packager:
-   ```
-   cp -r podcast/one-idea-youtube-packager ~/.claude/skills/
-   ```
+**Step 1 — Install Claude Code**
 
-3. Open Claude Code. The skill is available immediately as `/one-idea-youtube-packager`.
+Download it at [claude.ai/download](https://claude.ai/download) and sign in with your Anthropic account.
 
-To install all skills at once:
+**Step 2 — Open Terminal**
+
+On a Mac, press **Command + Space**, type **Terminal**, hit Enter.
+
+**Step 3 — Download the skills**
+
+Paste this into Terminal and hit Enter:
 ```
-cp -r podcast/* ~/.claude/skills/
-cp -r seo/* ~/.claude/skills/
-cp -r case-studies/* ~/.claude/skills/
+git clone https://github.com/emerykochanek/sedai-marketing-skills.git
+```
+
+**Step 4 — Install the skills**
+
+Paste these two lines into Terminal and hit Enter:
+```
+cd sedai-marketing-skills
+bash install.sh
+```
+
+You should see a list of skills with checkmarks. That means it worked.
+
+**Step 5 — Test it**
+
+Open Claude Code, start a new conversation, and type `/podcast` — the skills should appear in the menu.
+
+---
+
+## How to get updates
+
+When new skills are added or existing ones are updated, open Terminal and run:
+```
+cd ~/sedai-marketing-skills
+git pull
+bash install.sh
 ```
 
 ---
